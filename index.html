@@ -1,24 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <title>我的第一个网站</title>
     <meta charset="UTF-8">
-    <!-- 简单加个样式，让页面不那么单调 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的第一个网站</title>
+    <!-- 按钮样式：实现悬停抬起效果 -->
     <style>
-        body {
-            text-align: center;
-            margin-top: 100px;
-            font-family: 微软雅黑;
+        /* 登录按钮基础样式 */
+        .login-btn {
+            /* 按钮大小和文字 */
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #0078ff; /* 蓝色底色 */
+            /* 去掉按钮边框 */
+            border: none;
+            border-radius: 8px; /* 圆角 */
+            /* 鼠标移上去变成手型 */
+            cursor: pointer;
+            /* 过渡效果：让抬起动作更丝滑 */
+            transition: all 0.2s ease;
+            /* 按钮阴影：默认状态 */
+            box-shadow: 0 4px 0 #005cc8;
+            /* 按钮位置：居中显示（可选） */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
-        h1 {
-            color: #2F5496;
+
+        /* 鼠标悬停时：抬起效果 */
+        .login-btn:hover {
+            /* 向上移动一点 */
+            transform: translate(-50%, -55%);
+            /* 阴影变小，视觉上像“抬起” */
+            box-shadow: 0 2px 0 #005cc8;
+        }
+
+        /* 点击按钮时：按下效果（可选，增加交互感） */
+        .login-btn:active {
+            transform: translate(-50%, -48%);
+            box-shadow: 0 1px 0 #005cc8;
         }
     </style>
 </head>
 <body>
-    <h1>你好！这是我用GitHub做的网站 😜</h1>
-    <p>零基础也能上线，朋友可以直接访问啦～</p>
-    <p>我的小爱好：追剧、打羽毛球、学做网站</p>
+    <!-- 登录按钮：点击跳转到 second.html -->
+    <button class="login-btn" onclick="window.location.href='second.html'">登录</button>
 </body>
-
 </html>
